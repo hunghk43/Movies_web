@@ -3,7 +3,7 @@ function Header() {
     <div className="p-8 bg-black flex items-center justify-between   ">
       <div className="flex items-center space-x-4 ">
         <h1 className="text-[30px] uppercase font-bold text-red-600 mr-10 ">
-          HUNG.STUDIO_FILM
+          HUNG_FILM
         </h1>
         <nav className="  flex items-center space-x-4">
           {/* space : chỉ tạo ra khoảng cách các phần tử con, không tác động thẻ cha*/}
