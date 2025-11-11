@@ -1,11 +1,30 @@
 import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 6,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 5, // 👈 tăng từ 3 lên 5
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3, // 👈 tablet hiển thị 3 phim
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 const MovieList = ({ title, data }) => {
   return (
     <div className="text-white text-xl font-bold p-8 mb-10">
       <h2>{title}</h2>
-
-      <div className="flex items-center space-x-4">
+      <Carousel responsive={responsive}>
         {/* Code phần danh sách các bộ phim */}
         {data?.map((item) => (
           <div key={item.id} className="relative w-72 h-96 mt-10 group">
@@ -29,7 +48,7 @@ const MovieList = ({ title, data }) => {
             </div>
           </div>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 };
