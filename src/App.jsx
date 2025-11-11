@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import "./index.css";
+
 import Header from "./components/header";
 import Banner from "./components/Banner";
 import MovieList from "./components/MovieList";
+
 function App() {
   {
     /*Khai báo một useState */
   }
   const [movie, setMovie] = useState([]);
+  const [movieRate, setMovieRate] = useState([]);
   {
     /*Mỗi khi muốn gọi 1 hàm để gọi API ra , mỗi khi trang ban đầu load, bỏ vào useE, mỗi khi compo render
      bị khai báo lại
@@ -25,12 +28,18 @@ function App() {
           Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
         },
       };
-      const url =
-        "https://api.themoviedb.org/3/movie/popular?language=vi-VN&page=1";
-      const response = await fetch(url, options);
-      const data = await response.json();
-
-      console.log(data);
+      const url1 =
+        "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+      const url2 =
+        "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+      const [res1, res2] = await Promise.all([
+        fetch(url1, options),
+        fetch(url2, options),
+      ]);
+      const data1 = await res1.json();
+      const data2 = await res2.json();
+      setMovie(data1.results);
+      setMovieRate(data2.results);
     };
     fetchMovie();
   }, []);
@@ -40,8 +49,8 @@ function App() {
       <div className=" pb-10 bg-black ">
         <Header />
         <Banner />
-        <MovieList title={"PHIM HOT"} />
-        <MovieList title={"PHIM ĐỀ CỬ"} />
+        <MovieList title={"PHIM HOT"} data={movie.slice(0, 5)} />
+        <MovieList title={"PHIM ĐỀ CỬ"} data={movieRate.slice(0, 5)} />
       </div>
     </>
   );
