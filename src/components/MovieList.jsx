@@ -3,45 +3,44 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const responsive = {
   superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 6,
+    breakpoint: { max: 4000, min: 1536 },
+    items: 5,
   },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5, // 👈 tăng từ 3 lên 5
+    breakpoint: { max: 1536, min: 1024 },
+    items: 6,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3, // 👈 tablet hiển thị 3 phim
+    breakpoint: { max: 1024, min: 640 },
+    items: 2,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 640, min: 0 },
     items: 1,
   },
 };
 
 const MovieList = ({ title, data }) => {
   return (
-    <div className="text-white text-xl font-bold p-8 mb-10">
+    <div className="text-white text-xl font-bold p-8 mb-10   ">
       <h2>{title}</h2>
       <Carousel responsive={responsive}>
         {/* Code phần danh sách các bộ phim */}
         {data?.map((item) => (
-          <div key={item.id} className="relative w-72 h-96 mt-10 group">
-            <div className="cursor-pointer w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105">
-              {/* Lớp phủ đen mờ */}
+          <div
+            key={item.id}
+            className="relative w-full h-96 mt-10 group px-4   "
+          >
+            <div className="  cursor-pointer w-full h-full  ">
               <div className="absolute left-0 top-0 w-full h-full bg-black/40" />
 
-              {/* Ảnh */}
               <img
                 src={`${import.meta.env.VITE_IMG_URL}${item.poster_path}`}
                 alt={item.title}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
-
-              {/* Tên phim */}
-              <div className="absolute left-9 bottom-7">
-                <p className="uppercase text-md">
+              <div className="absolute bottom-0 w-full left-0 right-0 p-4 bg-gradient-to-r from-black/80 to-transparent z-10 ">
+                <p className="text-white text-md">
                   {item.title || item.original_title}
                 </p>
               </div>

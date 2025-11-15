@@ -8,7 +8,7 @@ function Banner() {
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-65 " />
       <div className=" p-10 w-full h-full flex items-center   justify-center space-x-8 relative z-20 ">
         <div className="flex flex-col space-y-5 items-baseline  w-[50%] ">
-          <p className=" text-white bg-gradient-to-r from-red-600 to-red-300  py-2 px-5 text-lg rounded-md text-[20px] ">
+          <p className=" text-white  bg-gradient-to-r from-red-600 to-red-300  py-2 px-5 text-lg rounded-md text-[20px] ">
             TV Show
           </p>
           <div className="flex flex-col space-y-4 ">

@@ -8,6 +8,9 @@ export default {
       backgroundImage: {
         banner: "url('/banner_banner.webp')",
       },
+      fontFamily: {
+        montserrat: ['"Montserrat"', "sans-serif"],
+      },
     },
   },
   plugins: [],

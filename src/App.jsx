@@ -11,6 +11,7 @@ function App() {
   }
   const [movie, setMovie] = useState([]);
   const [movieRate, setMovieRate] = useState([]);
+  const [movieUpComming, setMovieUpComming] = useState([]);
   {
     /*Mỗi khi muốn gọi 1 hàm để gọi API ra , mỗi khi trang ban đầu load, bỏ vào useE, mỗi khi compo render
      bị khai báo lại
@@ -32,14 +33,19 @@ function App() {
         "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
       const url2 =
         "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
-      const [res1, res2] = await Promise.all([
+      const url3 =
+        "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+      const [res1, res2, res3] = await Promise.all([
         fetch(url1, options),
         fetch(url2, options),
+        fetch(url3, options),
       ]);
       const data1 = await res1.json();
       const data2 = await res2.json();
+      const data3 = await res3.json();
       setMovie(data1.results);
       setMovieRate(data2.results);
+      setMovieUpComming(data3.results);
     };
     fetchMovie();
   }, []);
@@ -51,6 +57,7 @@ function App() {
         <Banner />
         <MovieList title={"PHIM HOT"} data={movie} />
         <MovieList title={"PHIM ĐỀ CỬ"} data={movieRate} />
+        <MovieList title={"PHIM SẮP CHIẾU"} data={movieUpComming} />
       </div>
     </>
   );
