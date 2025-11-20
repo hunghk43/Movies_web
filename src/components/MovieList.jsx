@@ -96,23 +96,20 @@ const MovieList = ({ title, data }) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
-        style={{
-          overlay: {
-            position: "fixed",
-            zIndex: 9999,
-          },
-          content: {
-            top: "50%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            transform: "translate(-50%, -50%)",
-          },
-        }}
-        contentLabel="Example Modal"
+        className=" 
+             bg-black rounded-lg p-4 shadow-xl outline-none w-[700px] max-w-full   "
+        overlayClassName="fixed inset-0 bg-black/60 backdrop-blur-sm   z-[9999] flex justify-center items-center "
       >
-        <YouTube videoId={trailerKey} opts={opts} />;
+        <div className="relative">
+          <button
+            onClick={() => setModalIsOpen(false)}
+            className="absolute right-0 left-auto  bg-red-600 text-white rounded-full 
+                 px-3 py-1 text-sm hover:bg-white hover:text-red-700 transition all duration-500 ease-in "
+          >
+            ✕
+          </button>
+          <YouTube videoId={trailerKey} opts={opts} />
+        </div>
       </Modal>
     </div>
   );
