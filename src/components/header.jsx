@@ -1,11 +1,12 @@
 import Logo from "../assets/Logo_Film.png";
+import Logo_2 from "../assets/Logo_Film_2.png";
 function Header() {
   return (
     <div className=" p-3 bg-black flex items-center justify-between    ">
-      <div className="flex items-center space-x-4 ">
+      <div className="flex items-center space-x-10 ml-6 ">
         <img
-          className="h-20 overflow-hidden  object-contain "
-          src={Logo}
+          className="h-20    object-contain  "
+          src={Logo_2}
           alt="Logo_Film"
         />
 
