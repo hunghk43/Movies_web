@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Logo from "../assets/Logo_Film.png";
 import Logo_2 from "../assets/Logo_Film_2.png";
-function Header() {
+function Header({ onSearch }) {
+  const [textSearch, setSearch] = useState([]);
   return (
     <div className=" p-3 bg-black flex items-center justify-between    ">
       <div className="flex items-center space-x-10 ml-6 ">
@@ -29,10 +31,18 @@ function Header() {
           type="text"
           placeholder="Search "
           className="p-4 text-white-300"
+          onChange={(e) => setSearch(e.target.value)}
+          value={textSearch}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              onSearch(textSearch);
+            }
+          }}
         />
         <button
           className=" p-2 bg-red-500 text-white rounded-md "
           type="button"
+          onClick={() => onSearch(textSearch)}
         >
           Search
         </button>

@@ -9,7 +9,6 @@ const opts = {
   height: "390",
   width: "640",
   playerVars: {
-    // https://developers.google.com/youtube/player_parameters
     autoplay: 1,
   },
 };
@@ -74,10 +73,14 @@ const MovieList = ({ title, data }) => {
             className="relative w-full h-auto mt-10 group px-4   "
           >
             <div className="  cursor-pointer w-full h-full  ">
-              <div className="absolute left-0 top-0 w-full h-full bg-black/40" />
+              <div className="absolute left-0 top-0 w-full h-full" />
 
               <img
-                src={`${import.meta.env.VITE_IMG_URL}${item.poster_path}`}
+                src={
+                  item.poster_path
+                    ? `${import.meta.env.VITE_IMG_URL}${item.poster_path}`
+                    : "./banner.webp"
+                }
                 alt={item.title}
                 className="h-full w-full object-cover rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
               />

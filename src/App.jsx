@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 
-import Header from "./components/header";
+import Header from "./components/Header";
 import Banner from "./components/Banner";
 import MovieList from "./components/MovieList";
-
+// import MovieSearch from "./components/MovieSearch";
+import MovieSearch from "./components/movieSearch";
 function App() {
   {
     /*Khai báo một useState */
@@ -12,6 +13,26 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [movieRate, setMovieRate] = useState([]);
   const [movieUpComming, setMovieUpComming] = useState([]);
+  const [movieSearch, setMovieSearch] = useState([]);
+  const handleSearch = async (searchValue) => {
+    setMovieSearch([]);
+    try {
+      const url = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&include_adult=false&language=en-US&page=1`;
+      const options = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+        },
+      };
+      const searchMovie = await fetch(url, options);
+      const data = await searchMovie.json();
+      setMovieSearch(data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   {
     /*Mỗi khi muốn gọi 1 hàm để gọi API ra , mỗi khi trang ban đầu load, bỏ vào useE, mỗi khi compo render
      bị khai báo lại
@@ -53,11 +74,17 @@ function App() {
   return (
     <>
       <div className=" pb-10 bg-black ">
-        <Header />
+        <Header onSearch={handleSearch} />
         <Banner />
-        <MovieList title={"PHIM HOT"} data={movie} />
-        <MovieList title={"PHIM ĐỀ CỬ"} data={movieRate} />
-        <MovieList title={"PHIM SẮP CHIẾU"} data={movieUpComming} />
+        {movieSearch.length > 0 ? (
+          <MovieSearch title={`KẾT QUẢ TÌM KIẾM `} data={movieSearch} />
+        ) : (
+          <>
+            <MovieList title={"PHIM HOT"} data={movie} />
+            <MovieList title={"PHIM ĐỀ CỬ"} data={movieRate} />
+            <MovieList title={"PHIM SẮP CHIẾU"} data={movieUpComming} />
+          </>
+        )}
       </div>
     </>
   );
