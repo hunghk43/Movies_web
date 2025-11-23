@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import Header from "./components/header";
 import Banner from "./components/Banner";
 import MovieList from "./components/MovieList";
 // import MovieSearch from "./components/MovieSearch";
@@ -73,7 +74,7 @@ function App() {
 
   return (
     <>
-      <div className=" pb-10 bg-black ">
+      <div className=" pb-5 bg-black mt-20">
         <Header onSearch={handleSearch} />
         <Banner />
         {movieSearch.length > 0 ? (

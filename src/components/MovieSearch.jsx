@@ -36,7 +36,7 @@ const MovieSearch = ({ title, data }) => {
 
   return (
     <div className="text-white text-xl font-bold px-8 mb-10">
-      <h2>{title}</h2>
+      <h2 className="mt-20">{title}</h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 mt-10">
         {data?.map((item) => (
@@ -45,7 +45,6 @@ const MovieSearch = ({ title, data }) => {
             onClick={() => handleTrailer(item.id)}
             className="group cursor-pointer"
           >
-            {/* Poster */}
             <div className="relative w-full h-auto rounded-lg overflow-hidden ">
               <div className="absolute left-0 top-0 w-full h-full z-10 rounded-lg" />
 
@@ -60,12 +59,14 @@ const MovieSearch = ({ title, data }) => {
               />
             </div>
 
-            <p className="text-md mt-4 font-bold text-center">
-              <span className="relative inline-block">
-                {item.title || item.name || item.original_title}
-                <span className="h-[2px] bg-red-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 absolute left-0 -bottom-0 w-full" />
-              </span>
-            </p>
+            <div className="group ">
+              <p className="text-white text-md mt-4 font-bold text-center  ">
+                <span className="relative inline-block">
+                  {item.title || item.original_title}
+                  <span className="h-[2px] bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 absolute left-0 -bottom-0 w-full" />
+                </span>
+              </p>
+            </div>
           </div>
         ))}
       </div>

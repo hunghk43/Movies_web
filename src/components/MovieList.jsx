@@ -87,9 +87,9 @@ const MovieList = ({ title, data }) => {
             </div>
             <div className="group ">
               <p className="text-white text-md mt-4 font-bold text-center  ">
-                <span className="relative inline-block  ">
+                <span className="relative inline-block">
                   {item.title || item.original_title}
-                  <span className=" h-[2px] bg-red-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 absolute left-0 -bottom-0 w-full  " />
+                  <span className="h-[2px] bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 absolute left-0 -bottom-0 w-full" />
                 </span>
               </p>
             </div>
