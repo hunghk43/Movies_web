@@ -145,7 +145,7 @@ function Banner() {
                   {Array(Math.round(movie.vote_average)).fill("⭐").join("")}
                 </span>
               </div>
-              <div className="text-gray-300 px-2 py-1  border-2 ">
+              <div className="text-gray-300 px-2 py-1  border-2   border-gray-300  ">
                 {handleTime(movie.runtime)}
               </div>
               {/* <span className="text-gray-300">
@@ -156,11 +156,11 @@ function Banner() {
             <div className="flex items-center space-x-6">
               <button
                 onClick={handleTrailer}
-                className="text-white bg-gradient-to-r from-red-500 to-pink-500  font-bold p-3 rounded-full text-lg border-2 border-transparent hover:-translate-y-1 hover:shadow-lg hover:shadow-red-500/50 transition-all duration-300 ease-in"
+                className="text-white bg-gradient-to-r from-red-500 to-pink-500  font-bold p-3 rounded-full text-lg border-transparent hover:-translate-y-2 hover:shadow-lg hover:shadow-red-500/50 transition-all duration-300 ease-in"
               >
                 Watch Trailer
               </button>
-              <button className="text-white bg-red-600 font-bold p-3 rounded-md text-lg border-2 border-transparent hover:bg-red-700 duration-300 ease-out ">
+              <button className=" text-white font-bold px-4 py-4 bg-gradient-to-bl from-red-500 to bg-pink-500 rounded-full    hover:-translate-y-2 shadow-lg hover:shadow-red-500  transition-all duration-300 ease-in ">
                 <a
                   href={`https://www.themoviedb.org/movie/${movie.id}`}
                   target="_blank"
