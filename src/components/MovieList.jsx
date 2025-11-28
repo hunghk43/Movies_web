@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Modal from "react-modal";
 import YouTube from "react-youtube";
-
+import IconPlay from "../assets/play.png";
 const opts = {
   height: "390",
   width: "640",
@@ -107,22 +107,22 @@ const MovieList = ({ title, data }) => {
                   }`}
                 />
               </div>
-              {/* nut play button */}
+              {/* nút play */}
               {hoveredID === item.id && (
                 <div className="absolute inset-0 flex items-center justify-center animate-fadeIn">
-                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.8)] hover:scale-110 transition-transform duration-300">
-                    <span className="text-white text-3xl ml-1">▶</span>
+                  <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.8)] hover:scale-110 transition-transform duration-300">
+                    <img src={IconPlay} alt="Play" />
                   </div>
                 </div>
               )}
 
-              {/* Số sao đánh giá */}
+              {/* Số rate */}
               {hoveredID === item.id && item.vote_average && (
                 <div className="absolute top-4 right-4  animate-fadeIn">
                   <div className="bg-black/80 backdrop-blur-sm px-3 py-2 rounded-full border-2 border-yellow-400">
                     <div className="flex items-center gap-1">
                       <span className="text-yellow-400 text-lg">⭐</span>
-                      <span className="text-white font-bold">
+                      <span className="text-green-500 font-bold">
                         {item.vote_average.toFixed(1)}
                       </span>
                     </div>
@@ -137,7 +137,7 @@ const MovieList = ({ title, data }) => {
    hoveredID && hoveredID !== item.id ? "brightness-50 saturate-0 blur-sm" : ""
  }`}
               >
-                {/* Movie Title */}
+                {/* tiêu đề */}
                 <p className="text-white text-base font-bold text-center leading-tight flex items-center justify-center">
                   <span className="relative inline-block text-xl">
                     {item.title || item.original_title}

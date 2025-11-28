@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import IconPlay from "../assets/play-button.png";
+import IconPlay from "../assets/play.png";
 import Modal from "react-modal";
 import YouTube from "react-youtube";
 
@@ -187,7 +187,7 @@ function Banner() {
               <img
                 src={IconPlay}
                 alt="Icon Play"
-                className="h-16 w-16 relative z-20 "
+                className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center  shadow-[0_0_30px_rgba(239,68,68,0.8)] hover:scale-110 transition-transform duration-300"
               />
             </div>
           </div>
