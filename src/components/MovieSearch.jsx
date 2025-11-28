@@ -38,7 +38,9 @@ const MovieSearch = ({ title, data }) => {
 
   return (
     <div className="text-white text-xl font-bold px-8 mb-10">
-      <h2 className="mt-20">{title}</h2>
+      <h2 className=" inline-block bg-gradient-to-r from-yellow-400  to-black/80 text-white px-3 py-2 rounded-full mt-8  animate-pulse ">
+        {title}
+      </h2>
       <div onMouseLeave={() => sethoveredID(null)}>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 mt-10">
           {data?.map((item) => (

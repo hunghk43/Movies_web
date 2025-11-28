@@ -61,7 +61,13 @@ const MovieList = ({ title, data }) => {
 
   return (
     <div className="text-white text-xl font-bold p-8 mb-10   ">
-      <h2>{title}</h2>
+      <h2
+        className="bg-gradient-to-r from-yellow-400 to-black inline-block px-3 py-2 rounded-full  animate-pulse
+"
+      >
+        {title}
+      </h2>
+
       <div onMouseLeave={() => sethoveredID(null)}>
         <Carousel responsive={responsive}>
           {/* Code phần danh sách các bộ phim */}
@@ -74,7 +80,7 @@ const MovieList = ({ title, data }) => {
               onMouseEnter={() => sethoveredID(item.id)}
               className={`
     relative w-full h-auto mt-10 px-4 cursor-pointer
-    transition-all duration-300 ease-out
+    transition-all duration-300 ease-out 
     ${hoveredID && hoveredID !== item.id ? "scale-90" : "scale-100"}
   `}
             >
@@ -89,7 +95,7 @@ const MovieList = ({ title, data }) => {
                 </div>
                 {/*image (poster) + overlay gradient
                  */}
-                <div className="absolute left-0 top-0 w-full h-[400px] overflow-hidden rounded-t-xl " />
+                <div className="absolute left-0 top-0 w-full h-[400px] overflow-hidden  " />
 
                 <img
                   src={
@@ -141,7 +147,7 @@ const MovieList = ({ title, data }) => {
                 <p className="text-white text-base font-bold text-center leading-tight flex items-center justify-center">
                   <span className="relative inline-block text-xl">
                     {item.title || item.original_title}
-                    {/* Animated Underline */}
+
                     <span
                       className={`
                           absolute left-0 -bottom-1 w-full h-[2px] 
@@ -206,4 +212,5 @@ const MovieList = ({ title, data }) => {
   + Nếu muốn thay đổi dữ liệu: dùng useState trong cha và truyền hàm setState xuống cho con để con “gọi ngượ
 */
 }
+
 export default MovieList;

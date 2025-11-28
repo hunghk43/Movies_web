@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 
-// import Header from "./components/Header";
-import Header from "./components/header";
+import Header from "./components/Header";
+
 import Banner from "./components/Banner";
 import MovieList from "./components/MovieList";
 // import MovieSearch from "./components/MovieSearch";

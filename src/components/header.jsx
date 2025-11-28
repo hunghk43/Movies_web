@@ -8,30 +8,32 @@ function Header({ onSearch }) {
     <div className="fixed top-0 left-0 w-full z-[9999] p-4 bg-gradient-to-b from-black via-black/95 to-black/80  backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/50">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-10 ml-6">
-          <img
-            className="h-20 rounded-md   "
-            src={Logo_FINAL}
-            alt="Logo_Film-FINAL"
-          />
+          <a href="/">
+            <img
+              className="h-20 rounded-md   "
+              src={Logo_FINAL}
+              alt="Logo_Film-FINAL"
+            />{" "}
+          </a>
 
           <nav className="flex items-center space-x-8 font-bold">
             <a
               className="text-white relative group transition-colors duration-300 hover:text-red-500"
-              href="#"
+              href="/"
             >
               Home
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-red-500 to-pink-500 group-hover:w-full transition-all duration-300" />
             </a>
             <a
               className="text-white relative group transition-colors duration-300 hover:text-red-500"
-              href="#"
+              href="/"
             >
               About
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-red-500 to-pink-500 group-hover:w-full transition-all duration-300" />
             </a>
             <a
               className="text-white relative group transition-colors duration-300 hover:text-red-500"
-              href="#"
+              href="/"
             >
               Contact
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-red-500 to-pink-500 group-hover:w-full transition-all duration-300" />
