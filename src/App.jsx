@@ -5,8 +5,9 @@ import Header from "./components/Header";
 
 import Banner from "./components/Banner";
 import MovieList from "./components/MovieList";
-// import MovieSearch from "./components/MovieSearch";
+
 import MovieSearch from "./components/movieSearch";
+
 function App() {
   {
     /*Khai báo một useState */
