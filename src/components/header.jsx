@@ -5,12 +5,12 @@ function Header({ onSearch }) {
   const [textSearch, setSearch] = useState("");
 
   return (
-    <div className="fixed top-0 left-0 w-full z-[9999] p-4 bg-gradient-to-b from-black via-black/95 to-black/80  backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/50">
+    <div className="fixed top-0 left-0 w-full z-[9999] p-3 bg-gradient-to-b from-black via-black/95 to-black/80  backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/50">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-10 ml-6">
           <a href="/">
             <img
-              className="h-20 rounded-md   "
+              className="h-[88px]  "
               src={Logo_FINAL}
               alt="Logo_Film-FINAL"
             />{" "}
