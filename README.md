@@ -54,7 +54,8 @@ A modern streaming platform built with React, Vite, and TMDB API. Discover, expl
 
 ### Trailer Modal
 ![Trailer Modal](https://i.imgur.com/E1oxrC0.png)
-
+### Movie Search
+![Trailer Modal](https://i.imgur.com/Oh8gXgH.png)
 ---
 
 ##  Live Demo
