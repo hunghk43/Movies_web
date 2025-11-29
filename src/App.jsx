@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 
-import Header from "./components/Header";
-
-import Banner from "./components/Banner";
-import MovieList from "./components/MovieList";
-
-import MovieSearch from "./components/movieSearch";
+import Header from "./components/Header.jsx";
+import Banner from "./components/Banner.jsx";
+import MovieList from "./components/MovieList.jsx";
+import MovieSearch from "./components/MovieSearch.jsx";
 
 function App() {
   {
