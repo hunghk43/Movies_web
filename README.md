@@ -255,10 +255,3 @@ For support, email Hoangkimhung2004@gmail.com
 
 ---
 
-<div align="center">
-
-Made with  by [Hung HK](https://github.com/hunghk43)
-
- Star this repo if you find it helpful!
-
-</div>
