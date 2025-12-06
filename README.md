@@ -32,18 +32,16 @@ A modern movie streaming platform built with React, Vite, and TMDB API. Discover
 
 <div align="center">
 
-
-
-
-
 ### Login / Sign Up
+
 ![Sign In / Sign Up](https://i.imgur.com/BaO4Nop.png)
+
 ### Homepage
+
 ![Homepage](https://i.imgur.com/3dPICFC.png)
 
-
-
 ### Hover Effects & Trailer Modal
+
 <img src="https://i.imgur.com/8nueoLP.png" width="49%" /> <img src="https://i.imgur.com/E1oxrC0.png" width="49%" />
 
 </div>
@@ -54,7 +52,7 @@ A modern movie streaming platform built with React, Vite, and TMDB API. Discover
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - TMDB API Key ([Get free key](https://www.themoviedb.org/settings/api))
 - Firebase Project ([Setup guide](https://firebase.google.com/))
 
@@ -110,13 +108,13 @@ npm run preview
 ## Tech Stack
 
 **Frontend:**
-![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react) 
-![Vite](https://img.shields.io/badge/Vite-7.2.2-646CFF?logo=vite) 
-![Tailwind](https://img.shields.io/badge/Tailwind-3.4.17-38B2AC?logo=tailwind-css) 
+![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-7.2.2-646CFF?logo=vite)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4.17-38B2AC?logo=tailwind-css)
 ![React Router](https://img.shields.io/badge/React_Router-6.26.0-CA4245?logo=react-router)
 
 **Services:**
-![TMDB](https://img.shields.io/badge/TMDB-API-01b4e4?logo=themoviedatabase) 
+![TMDB](https://img.shields.io/badge/TMDB-API-01b4e4?logo=themoviedatabase)
 ![Firebase](https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase)
 
 **Key Libraries:** react-multi-carousel • react-modal • react-youtube
@@ -125,7 +123,7 @@ npm run preview
 
 ## Deployment
 
-### Vercel 
+### Vercel
 
 1. Push code to GitHub
 2. Import project in [Vercel](https://vercel.com/new)
@@ -154,9 +152,6 @@ Contributions are welcome! Feel free to:
 ---
 
 ## Author
-
-
-
 
 - Email: Hoangkimhung2004@gmail.com
 
