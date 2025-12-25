@@ -46,8 +46,8 @@ function Banner() {
 
         setMovie({
           ...randomMovie,
+
           runtime: detailsData.runtime,
-          // genres: detailsData.genres,
         });
       } catch (error) {
         console.log("Error fetching banner movie:", error);
@@ -148,9 +148,6 @@ function Banner() {
               <div className="text-gray-300 px-2 py-1  border-2   border-gray-300  ">
                 {handleTime(movie.runtime)}
               </div>
-              {/* <span className="text-gray-300">
-                {movie.genres.map((g) => g.name).join(", ")}
-              </span> */}
             </div>
 
             <div className="flex items-center space-x-6">

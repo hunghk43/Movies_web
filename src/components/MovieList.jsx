@@ -32,12 +32,10 @@ const responsive = {
 };
 
 const MovieList = ({ title, data }) => {
-  {
-    /*useState : dùng để thay đổi những giá trị hoặc handle thuộc tính trong reactjs dùng trong components */
-  }
   const [trailerKey, setTrailerKey] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [hoveredID, sethoveredID] = useState(null);
+
   const handleTrailer = async (id) => {
     setTrailerKey("");
     try {
@@ -70,7 +68,7 @@ const MovieList = ({ title, data }) => {
 
       <div onMouseLeave={() => sethoveredID(null)}>
         <Carousel responsive={responsive}>
-          {/* Code phần danh sách các bộ phim */}
+          {/* phần danh sách các bộ phim */}
           {data?.map((item) => (
             <div
               key={item.id}
@@ -93,8 +91,7 @@ const MovieList = ({ title, data }) => {
                 >
                   {" "}
                 </div>
-                {/*image (poster) + overlay gradient
-                 */}
+
                 <div className="absolute left-0 top-0 w-full h-[400px] overflow-hidden  " />
 
                 <img
@@ -135,7 +132,7 @@ const MovieList = ({ title, data }) => {
                   </div>
                 </div>
               )}
-              {/* tiêu đề  */}
+
               <div
                 className={`relative bg-gradient-to-b from-black/80 to-gray-900 p-4 rounded-b-xl
                     transition-all duration-300
@@ -202,15 +199,5 @@ const MovieList = ({ title, data }) => {
     </div>
   );
 };
-
-{
-  /* 
-  MỤC TIÊU CỦA PROP LÀ :
-  + Truyền data từ component cha xuống component con, và component con hiển thị dữ liệu đó.
-  + Không được thay đổi giá trị trong component con — muốn thay đổi thì dùng state ở cha.
-  + Props là "read-only" (chỉ đọc).
-  + Nếu muốn thay đổi dữ liệu: dùng useState trong cha và truyền hàm setState xuống cho con để con “gọi ngượ
-*/
-}
 
 export default MovieList;

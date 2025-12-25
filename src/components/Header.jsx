@@ -62,30 +62,35 @@ function Header({ onSearch }) {
 
         {/* Search & User Auth */}
         <div className="flex items-center space-x-4 mr-6">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search movies..."
-              className="w-80 px-5 py-3 bg-white/10 backdrop-blur-md text-white rounded-full border-2 border-white/20 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-700 transition-all duration-300 shadow-inner"
-              value={textSearch}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  onSearch(textSearch);
-                }
-              }}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
+          {/* chỉ hiện tìm kiếm nếu mình đăng nhập */}
+          {user?.email && (
+            <>
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search movies..."
+                  className="w-80 px-5 py-3 bg-white/10 backdrop-blur-md text-white rounded-full border-2 border-white/20 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-700 transition-all duration-300 shadow-inner"
+                  value={textSearch}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      onSearch(textSearch);
+                    }
+                  }}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
 
-          <button
-            className="px-6 py-3 bg-gradient-to-r from-red-600 via-red-500 to-pink-600 text-white font-bold rounded-full shadow-lg shadow-red-500/50 hover:shadow-red-500/80 hover:scale-105 transition-all duration-300"
-            type="button"
-            onClick={() => onSearch(textSearch)}
-          >
-            Search
-          </button>
+              <button
+                className="px-6 py-3 bg-gradient-to-r from-red-600 via-red-500 to-pink-600 text-white font-bold rounded-full shadow-lg shadow-red-500/50 hover:shadow-red-500/80 hover:scale-105 transition-all duration-300"
+                type="button"
+                onClick={() => onSearch(textSearch)}
+              >
+                Search
+              </button>
+            </>
+          )}
 
-          {/* Logic hiển thị nút User/Login */}
+          {/*  hiển thị nút User/Login */}
           {user?.email ? (
             <div className="relative group">
               <div className="flex items-center space-x-2 cursor-pointer px-4 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300">
@@ -107,7 +112,7 @@ function Header({ onSearch }) {
                 </svg>
               </div>
 
-              {/* Dropdown menu */}
+              {/*menu */}
               <div className="absolute right-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg shadow-xl border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
                 <button
                   onClick={handleLogout}

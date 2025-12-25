@@ -11,13 +11,13 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Khởi tạo Firebase
+// Khởi tạo firebase
 const app = initializeApp(firebaseConfig);
 
-// Khởi tạo Authentication (để đăng nhập/đăng ký)
+// Khởi tạo authentication (để đăng nhập/đăng ký)
 export const auth = getAuth(app);
 
-// Khởi tạo Firestore (để lưu phim yêu thích)
+// Khởi tạo firestore (để lưu phim yêu thích)
 export const db = getFirestore(app);
 
 export default app;

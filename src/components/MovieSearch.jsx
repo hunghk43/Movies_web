@@ -6,7 +6,7 @@ import IconPlay from "../assets/play.png";
 const opts = {
   height: "390",
   width: "640",
-  playerVars: { autoplay: 1 },
+  playerVars: { autoplay: 0 },
 };
 
 const MovieSearch = ({ title, data }) => {
@@ -42,7 +42,7 @@ const MovieSearch = ({ title, data }) => {
         {title}
       </h2>
       <div onMouseLeave={() => sethoveredID(null)}>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 mt-10">
+        <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 gap-10 mt-10">
           {data?.map((item) => (
             <div
               key={item.id}

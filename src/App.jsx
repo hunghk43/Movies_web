@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-
 import { AuthContextProvider } from "./Context/AuthContext";
 
 function App() {
