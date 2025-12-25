@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header.jsx";
 import Banner from "../components/Banner.jsx";
 import MovieList from "../components/MovieList.jsx";
-import MovieSearch from "../components/movieSearch.jsx";
+import MovieSearch from "../components/MovieSearch.jsx";
 
 function App() {
   const [movie, setMovie] = useState([]);

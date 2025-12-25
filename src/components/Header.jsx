@@ -15,7 +15,6 @@ function Header({ onSearch }) {
 
     return () => clearTimeout(delayDebounceFn);
   }, [textSearch]);
-  // -----------------------------------------
 
   const handleLogout = async () => {
     try {
