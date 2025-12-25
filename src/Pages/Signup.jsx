@@ -14,10 +14,23 @@ const Signup = () => {
       await signUp(email, password);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      console.log(error.code);
+
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          alert("Email này đã được đăng ký rồi!");
+          break;
+        case "auth/invalid-email":
+          alert("Email không hợp lệ!");
+          break;
+        case "auth/weak-password":
+          alert("Mật khẩu phải có ít nhất 6 ký tự!");
+          break;
+        default:
+          alert("Lỗi đăng ký: " + error.message);
+      }
     }
   };
-
   return (
     <div className="w-full h-screen">
       <img
